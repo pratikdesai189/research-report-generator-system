@@ -44,7 +44,6 @@ pyyaml==6.0.3
 regex==2026.9.10
 requests==2.34.2
 requests-toolbelt==1.0.0
--e file:///Users/pratik/Coding/Research_Report%20Generator_System
 sniffio==1.3.1
 starlette==1.7.0
 tenacity==9.1.4
