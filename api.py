@@ -13,6 +13,23 @@ load_dotenv()
 
 app = FastAPI(title="Multi-Agent Research System")
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
+# Add this after creating FastAPI app:
+app = FastAPI(title="Multi-Agent Research System")
+
+# Serve static files
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# Serve index.html at root
+@app.get("/")
+def serve_frontend():
+    """Serve the frontend"""
+    return FileResponse("static/index.html")
+
+# Rest of your code...
+
 # ============ PYDANTIC MODELS ============
 class ResearchRequest(BaseModel):
     query: str
